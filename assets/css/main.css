@@ -172,7 +172,7 @@ h3{
     margin-left: 160px;
   }
 
-  .header~main .hero {
+  .header~main .home {
     margin-left: -160px;
     width: 100vw;
   }
@@ -516,9 +516,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# home Section
 --------------------------------------------------------------*/
-.hero {
+.home {
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -528,7 +528,7 @@ section,
   justify-content: center;
 }
 
-.hero img {
+.home img {
   position: absolute;
   inset: 0;
   display: block;
@@ -538,7 +538,7 @@ section,
   z-index: 1;
 }
 
-.hero:before {
+.home:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
@@ -546,34 +546,34 @@ section,
   z-index: 2;
 }
 
-.hero .container {
+.home .container {
   position: relative;
   z-index: 3;
   margin-left: 5%;
 }
 
-.hero h2 {
+.home h2 {
   margin: 0;
   color: #06fc3b;
   font-size: 64px;
   font-weight: bold;
 }
 
-.hero p {
+.home p {
   margin: 5px 0 0 0;
   font-size: 26px;
 }
 
-.hero p span {
+.home p span {
   letter-spacing: 1px;
   border-bottom: 2px solid var(--accent-color);
 }
 
-.hero .social-links {
+.home .social-links {
   margin-top: 25px;
 }
 
-.hero .social-links a {
+.home .social-links a {
   font-size: 20px;
   display: inline-block;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
@@ -582,16 +582,16 @@ section,
   transition: 0.3s;
 }
 
-.hero .social-links a:hover {
+.home .social-links a:hover {
   color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
+  .home h2 {
     font-size: 32px;
   }
 
-  .hero p {
+  .home p {
     font-size: 20px;
   }
 }
@@ -1460,17 +1460,17 @@ section,
 # Custom STYLES
 --------------------------------------------------------------*/
 
-.hero canvas{
+.home canvas{
   z-index: 4;
   position: absolute;
 }
 
-.section .hero{
+.section .home{
   position: relative;
   padding: 0 0px !important;
   z-index: 4;
 }
 
-.hero{
+.home{
   padding: 0 0px !important;
 }

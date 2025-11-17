@@ -249,4 +249,42 @@
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   document.getElementById("birthday").textContent = birthDate.toLocaleDateString('en-US', options);  
 
+  document.querySelectorAll("[data-period]").forEach(el => {
+      const period = el.dataset.period;
+      el.textContent = calcExperience(period);
+  });
+
+  function calcExperience(period) {
+    const [startStr, endStr] = period.split(" - ");
+
+    // Разбираем дату начала
+    const [startMonth, startYear] = startStr.split(".").map(Number);
+
+    // Разбираем дату окончания
+    let endMonth, endYear;
+
+    if (endStr.toUpperCase() === "NOW") {
+        const now = new Date();
+        endMonth = now.getMonth() + 1; // getMonth = 0..11
+        endYear = now.getFullYear();
+    } else {
+        [endMonth, endYear] = endStr.split(".").map(Number);
+    }
+
+    // Подсчёты
+    let years = endYear - startYear;
+    let months = endMonth - startMonth;
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    // Формируем текст
+    const y = years > 0 ? `${years} ${years === 1 ? "year" : "years"}` : "";
+    const m = months > 0 ? `${months} ${months === 1 ? "month" : "months"}` : "";
+
+    return `${period} (${y}${y && m ? " " : ""}${m})`;
+}
+
 })();
